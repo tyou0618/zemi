@@ -24,3 +24,14 @@ https://www.mva-org.jp/Proceedings/2017USB/papers/04-27.pdf
 ## 6.Tracking Pedestrian Heads in Dense Crowd (2021)
 https://arxiv.org/pdf/2103.13516
 
+## 7.A Social Distance Estimation and Crowd Monitoring System for Surveillance Cameras (2022)
+https://www.mdpi.com/1424-8220/22/2/418
+
+
+https://www.jstage.jst.go.jp/article/jste/10/1/10_A_250/_pdf/-char/ja
+
+https://www.jstage.jst.go.jp/article/itej/76/1/76_53/_pdf/-char/ja
+
+https://proceedings-of-deim.github.io/DEIM2021/papers/J13-5.pdf
+
+https://labs.eecs.tottori-u.ac.jp/sd/Member/oyamada/OpenCV/html/py_tutorials/py_video/py_lucas_kanade/py_lucas_kanade.html
