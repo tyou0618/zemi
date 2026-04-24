@@ -4,7 +4,11 @@
 #set par(first-line-indent:(amount:1em,all: true),justify: true)
 
 #show: slides.with(
-  title:"全体ゼミでの振り返り",)
+  title:"全体ゼミでの振り返り",
+  authors: "923044 高宮悠聖", 
+  // subtitle: "サブタイトルが必要な場合はここ",
+  date: "2026年4月24日")
+
 
 == 今週行ったこと( 4/24 )
 - Mac mini の設定続き
