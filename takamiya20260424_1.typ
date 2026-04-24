@@ -28,11 +28,12 @@
 →複数の列を検知しカテゴリ別に分けれるようにする
 
 #align(center)[
-#image("takamiya20260424p1.png", width: 80%)
+#image("takamiya20260424p1.png", width: 70%)
 ]
-
-
 - https://proceedings-of-deim.github.io/DEIM2021/papers/J13-5.pdf
+
+
+
 \
 == 今後の予定
 複数の類似研究の論文を読んだところ、基本的にYou Only Look Once(Yolo)のアルゴリズムを使用している.なのでとりあえず研究室のパソコンで導入して使用してみる.Yoloにもv1からv12くらいまであるので、どう違うのか調べつつ使用感を見る.

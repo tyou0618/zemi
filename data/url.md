@@ -27,11 +27,14 @@ https://arxiv.org/pdf/2103.13516
 ## 7.A Social Distance Estimation and Crowd Monitoring System for Surveillance Cameras (2022)
 https://www.mdpi.com/1424-8220/22/2/418
 
-
+## 8.ネットワークカメラによる人流データを活用した建物間のOD交通量更新手法の構築(2024)
 https://www.jstage.jst.go.jp/article/jste/10/1/10_A_250/_pdf/-char/ja
 
+## 9.鉄道向け混雑度計測・予測技術(2021)
 https://www.jstage.jst.go.jp/article/itej/76/1/76_53/_pdf/-char/ja
 
+## 10.全天球カメラを用いたリアルタイム行列検知(2021)
 https://proceedings-of-deim.github.io/DEIM2021/papers/J13-5.pdf
 
+## 11.オプティカルフロー(論文じゃない)
 https://labs.eecs.tottori-u.ac.jp/sd/Member/oyamada/OpenCV/html/py_tutorials/py_video/py_lucas_kanade/py_lucas_kanade.html
