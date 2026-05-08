@@ -1,7 +1,7 @@
-#set text(font:"Noto Serif JP",12pt,weight:"black")
+#set text(font: "IPAexMincho", 12pt, weight: "black")
 #set par(
   justify: true,
-  first-line-indent: (all: true, amount: 0em)
+  first-line-indent: (all: true, amount: 0em),
 )
 #set heading(numbering: "1.1.a.")
 #set page(numbering: "1")

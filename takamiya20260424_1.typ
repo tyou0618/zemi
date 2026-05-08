@@ -1,7 +1,7 @@
-#set text(font:"Noto Serif JP",12pt,weight:"black")
+#set text(font: "IPAexMincho", 12pt, weight: "black")
 #set par(
   justify: true,
-  first-line-indent: (all: true, amount: 0em)
+  first-line-indent: (all: true, amount: 0em),
 )
 #set heading(numbering: "1.1.a.")
 #set page(numbering: "1")
@@ -28,7 +28,7 @@
 →複数の列を検知しカテゴリ別に分けれるようにする
 
 #align(center)[
-#image("takamiya20260424p1.png", width: 70%)
+  #image("takamiya20260424p1.png", width: 70%)
 ]
 - https://proceedings-of-deim.github.io/DEIM2021/papers/J13-5.pdf
 

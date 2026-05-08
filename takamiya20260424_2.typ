@@ -1,13 +1,14 @@
 #import "@preview/slydst:0.1.4": *
 #import "@preview/codelst:2.0.2": sourcecode
-#set text(font:"Noto Serif JP",10pt,weight:"black")
-#set par(first-line-indent:(amount:1em,all: true),justify: true)
+#set text(font: "IPAexMincho", 10pt, weight: "black")
+#set par(first-line-indent: (amount: 1em, all: true), justify: true)
 
 #show: slides.with(
-  title:"全体ゼミでの振り返り",
-  authors: "923044 高宮悠聖", 
+  title: "全体ゼミでの振り返り",
+  authors: "923044 高宮悠聖",
   // subtitle: "サブタイトルが必要な場合はここ",
-  date: "2026年4月24日")
+  date: "2026年4月24日",
+)
 
 
 == 今週行ったこと( 4/24 )
@@ -28,7 +29,7 @@
 === 全天球カメラを用いたリアルタイム行列検知
 全天球カメラのパノラマ映像を活用して、現実空間の行列をリアルタイムで検知する研究.
 #align(center)[
-    #image("takamiya20260424p2.png", width: 62%)
+  #image("takamiya20260424p2.png", width: 62%)
 ]
 - https://pmc.ncbi.nlm.nih.gov/articles/PMC11207467/
 (2024)
