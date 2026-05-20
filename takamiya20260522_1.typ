@@ -16,6 +16,9 @@
 
 = 現在の進行状況
 == Social-LSTM
+#align()[
+  #image("takamiya20260522p2.png", width: 30%)
+]
 === 今後特に使用するプログラム
 - model.py
 Social-LSTM本体で、LSTMやSocial Pooling、未来予測を行なっている.\
@@ -33,6 +36,8 @@ Social Poolingを実装し、近くの人をどのように扱うかを決定し
 - train.py
 学習を実行するためのプログラム.
 
+#pagebreak()
+
 === フォルダの役割
 - data
 学習のデータ置き場で、時刻や写る人のID、それぞれの座標などが記録されている.
@@ -49,8 +54,10 @@ Social Poolingを実装し、近くの人をどのように扱うかを決定し
 - result
 plotとの違いは、plotが人の確認用で、resultはプログラム用.
 
+
+
 #align(center)[
-  #image("takamiya20260522p1.png", width: 100%)
+  #image("takamiya20260522p1.png", width: 80%)
 ]
 
 線の意味：\
