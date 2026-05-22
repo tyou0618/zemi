@@ -44,8 +44,8 @@
 
 - なぜ有効か
 #align(center)[
-  #image("takamiya20260522p3.png", width: 40%)
+  #image("takamiya20260522p3.png", width: 65%)
 ]
 #align(center)[
-  #image("takamiya20260522p4.png", width: 40%)
+  #image("takamiya20260522p4.png", width: 65%)
 ]
