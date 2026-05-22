@@ -33,7 +33,7 @@
   - visualize.py:予測結果を見るためのプログラム
 - 実装結果
 #align(center)[
-  #image("takamiya20260522p1.png", width: 80%)
+  #image("takamiya20260522p1.png", width: 60%)
 ]
 
 線の意味：\
@@ -49,3 +49,12 @@
 #align(center)[
   #image("takamiya20260522p4.png", width: 65%)
 ]
+参照サイト：\
+Social LSTM: Human Trajectory Prediction in Crowded Spaces を読んだ \
+https://qiita.com/_NiMA_/items/f19623c69d936d2ffcec
+
+\
+
+Social LSTM:
+Human Trajectory Prediction in Crowded Spaces \
+https://openaccess.thecvf.com/content_cvpr_2016/papers/Alahi_Social_LSTM_Human_CVPR_2016_paper.pdf
