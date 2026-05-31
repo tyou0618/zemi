@@ -41,7 +41,7 @@ $ H_t^i (m,n,:) =sum_(j in N_i)1_( m n )[x_t^j-x_t^i, y_t^j-y_t^i]h_(t-1)^j $
   $h_(t-1)^j$ ： j番目の人のLSTM記憶
 ]
 #align(center)[
-  #image("takamiya20260529p5.png", width: 85%)
+  #image("takamiya20260529p5.png", width: 80%)
 ]
 
 $ e_t^i = phi (x_t^i, y_t^i; W_e) $
