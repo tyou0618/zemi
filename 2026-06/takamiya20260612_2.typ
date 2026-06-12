@@ -6,115 +6,46 @@
 #show: slides.with(
   title: "全体ゼミでの振り返り",
   authors: "923044 高宮悠聖",
-  // subtitle: "サブタイトルが必要な場合はここ",
-  date: "2026年5月29日",
+  date: "2026年6月12日",
 )
 
-
-== 今週行ったこと( 5/29 )
+== 今週行ったこと( 6/12 )
 - プログラムの内容確認
-- アプリ作成
+- ホームページ作成
 
 == プログラムの内容確認
 === ソースコード確認
 - 内容を変更するにために使用するプログラムの内容を確認
   - コメントアウトで分かりやすいように説明を記述
-
-
-#pagebreak()
-
-=== 式確認
-$ H_t^i (m,n,:) =sum_(j in N_i)1_( m n )[x_t^j-x_t^i, y_t^j-y_t^i]h_(t-1)^j $
-
-#text(size: 8pt)[
-  $H_t^i (m,n,:)$ ： \
-  時刻tのときi番目の人が,グリッド位置m,n内にいるときのhidden state を集めた周囲情報マップ\
-
-  $sum_(j in N_i)$： iの近くにいる周囲の人jたち全員を足し合わせる
-
-  $x_t^j-x_t^i, y_t^j-y_t^i$ ： jがiから見て縦横にどれだけ離れてるか
-
-  $1_(m n)[...]$ ： 指示関数,jが(m,n)マスにいたら1,違えば0,
-
-  $h_(t-1)^j$ ： j番目の人のLSTM記憶
-]
-
-$ e_t^i = phi (x_t^i, y_t^i; W_e) $
-#text(size: 8pt)[
-  $e_t^i$ ： 自分の位置特徴ベクトル \
-
-  $x_t^i, y_t^i;$ ： i番目の人の現在座標\
-
-  $phi ()$ ： 変換関数,線形変換 + 活性化関数(ReLU)\
-
-  $W_e$ ： 重み
-]
-
-$ a_t^i = phi (H_t^i; W_a) $
-#text(size: 8pt)[
-  $a_t^i$ ： 周囲状況を表す特徴ベクトル\
-
-  $phi (H_t^i; W_a)$ ： 周囲情報を特徴ベクトルへ変換
-]
-
-$ h_t^i = "LSTM" (h_(t-1)^i, e_t^i, a_t^i; W_l) $
-#text(size: 8pt)[
-  $h_t^i$ ： i番目の人の更新した新しい hidden state
-
-  $h_(t-1)^i$ ： 前回の hidden state\
-
-  $e_t^i$ ： 自分の位置特徴ベクトル \
-
-  $a_t^i$ ： 周囲状況を表す特徴ベクトル\
-]
-
-$ (hat(x), hat(y))_t^i ~ N(mu_t^i, sigma_t^i, rho_t^i) $
-#text(size: 8pt)[
-  $(hat(x), hat(y))_t^i$ ： 予測された未来位置\
-
-  $N(mu_t^i, sigma_t^i, rho_t^i)$ ： 正規分布（ガウス分布）\
-
-  $mu_t^i$ : 予測位置の中心\
-
-  $sigma_t^i$ : 予測の広がり\
-
-  $rho_t^i$ : x方向とy方向の関連
-]
-
-$ [mu_t^i, sigma_t^i, rho_t^i] = W_p h_(t-1)^i $
-#text(size: 8pt)[
-  $[mu_t^i, sigma_t^i, rho_t^i]$ : 未来位置分布の設定値\
-
-  $h_(t-1)^i$ ： 前回の hidden state\
-
-  $W_p$ ： 出力用の重み
-]
+  - 基本のコードは確認終了
 
 #pagebreak()
 
-$
-  L^i (W_e, W_l, W_p) = - sum_(t=T_"obs"+1)^(T_"pred" )
-  log(P(x_t^i, y_t^i | mu_t^i, sigma_t^i, rho_t^i))
-$
-#text(size: 8pt)[
-  $L^i(W_e,W_l,W_p)$ ： 損失関数（Loss）\
+== ホームページ作成
+ホーム、自己紹介、研究内容、その他のページを一旦完成させた
 
-  $W_e$ ： 自分位置embedding, $W_l$ ： LSTM内部, $W_p$ ： 出力変換\
+=== ホーム
+- 最新の研究報告を見れる欄を作成
 
-  $-sum$ ： 未来時間全部の誤差を足す,\
-  正解確率は大きいほどいいので$-$をつけてLossを最小化するようにしている
+=== 自己紹介
+- 基本情報、スキル、研究分野ｍ一言を追加した
 
-  $t=T_"obs"+1$ ： 観測終了後から, $T_"pred"$ ： 予測終了時刻
+=== 研究内容
+- ミニゼミ、全体ゼミの発表資料を閲覧できるようにした
 
-  $P(x_t^i, y_t^i | mu_t^i, sigma_t^i, rho_t^i)$ ： 本当の位置が予測分布でどれくらい確率高いか
+=== その他
+- 研究外で作成した作品紹介を追加した(ポートフォリオ)
 
-  $-log(P)$ ： 予測が外れるほど大きくなる
+#pagebreak()
+
+=== その他
+- flutterでリバーシを作成した
+
+#block[
+  #set text(size: 9pt)
+  https://www.oit.ac.jp/labs/rd/rssrv/kobayashi-lab/~takamiya/flutter/reversi.html
 ]
 
-
-== アプリ作成
-- カラオケにあった「狩歌」というボードゲームが面白かったので、スマホでもできるように作成した
-- ルール
-
-https://www.xaquinel.com/works/caruuta-basic-set
-
+#align(center)[
+  #image("takamiya20260612p1.png", width: 45%)
+]
