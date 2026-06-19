@@ -60,46 +60,114 @@ python train.py: 学習メイン処理を起動する \
 - 一から学習する場合は、model/ フォルダの中身を空にするか、別の場所に移動させてから train.py を動かす
 
 == 実験結果
-=== epochs 30 batch_size 5 learning_rate 0.003 の場合
-[epoch 29] \
-valid_loss = 1.636, \
-valid_mean_err = 0.882, \
-valid_final_err = 1.776 \
-Best epoch 12 \
-Best valid_loss = 1.273 \
-Best valid_mean_err = 0.886 \
-Best valid_final_err = 1.699
+#block()[
+  #set text(9pt)
+  === epochs 30 batch_size 5 learning_rate 0.003 の場合
+  [epoch 29] \
+  valid_loss = 1.636, \
+  valid_mean_err = 0.882, \
+  valid_final_err = 1.776 \
+  Best epoch 12 \
+  Best valid_loss = 1.273 \
+  Best valid_mean_err = 0.886 \
+  Best valid_final_err = 1.699
 
-=== epochs 15 batch_size 5 learning_rate 0.003 の場合
-(epoch 14), valid_loss = 3.407, valid_mean_err = 0.910, valid_final_err = 1.848
-Best epoch 3 Best validation loss 2.5164728303921637 Best error epoch 13 Best error tensor(1.3599)
-Saving model
-Best epoch 0 Best validation Loss 100 Best error epoch 0 Best error 100000
-Best epoch acording to validation dataset 3 Best validation Loss 2.5164728303921637 Best error epoch 13 Best error tensor(1.3599)
-(epoch 3), valid_loss = 2.516, valid_mean_err = 1.014, valid_final_err = 2.057
-Best epoch 3 Best validation loss 2.5164728303921637 Best error epoch 3 Best error tensor(1.5358)
-Saving model
+  === epochs 15 batch_size 5 learning_rate 0.003 の場合
+  [epoch 14] \
+  valid_loss = 3.407, \
+  valid_mean_err = 0.910, \
+  valid_final_err = 1.848 \
+  Best epoch 3 \
+  Best valid_loss = 2.516 \
+  Best valid_mean_err = 1.014, \
+  Best valid_final_err = 2.057
 
-=== epochs 30 batch_size 5 learning_rate 0.0015 の場合
-(epoch 29), valid_loss = 1.735, valid_mean_err = 0.899, valid_final_err = 1.843
-Best epoch 14 Best validation loss 1.4595609503075604 Best error epoch 27 Best error tensor(1.3396)
-Saving model
-Best epoch 0 Best validation Loss 100 Best error epoch 0 Best error 100000
-Best epoch acording to validation dataset 14 Best validation Loss 1.4595609503075604 Best error epoch 27 Best error tensor(1.3396)
-(epoch 14), valid_loss = 1.460, valid_mean_err = 0.918, valid_final_err = 1.849
-Best epoch 14 Best validation loss 1.4595609503075604 Best error epoch 13 Best error tensor(1.3528)
-Saving model
+  === epochs 30 batch_size 5 learning_rate 0.0015 の場合
+  [epoch 29], \
+  valid_loss = 1.735, \
+  valid_mean_err = 0.899, \
+  valid_final_err = 1.843 \
+  Best epoch 14 \
+  Best valid_loss = 1.460 \
+  Best valid_mean_err = 0.918, \
+  Best valid_final_err = 1.849
 
-=== epochs 15 batch_size 5 learning_rate 0.0015 の場合
-(epoch 14), valid_loss = 1.681, valid_mean_err = 0.871, valid_final_err = 1.709
-Best epoch 7 Best validation loss 1.6065103109861756 Best error epoch 14 Best error tensor(1.2901)
-Saving model
-Best epoch 0 Best validation Loss 100 Best error epoch 0 Best error 100000
-Best epoch acording to validation dataset 7 Best validation Loss 1.6065103109861756 Best error epoch 14 Best error tensor(1.2901)
-(epoch 7), valid_loss = 1.607, valid_mean_err = 0.933, valid_final_err = 1.885
-Best epoch 7 Best validation loss 1.6065103109861756 Best error epoch 7 Best error tensor(1.4091)
-Saving model
+
+  === epochs 15 batch_size 5 learning_rate 0.0015 の場合
+  [epoch 14], \
+  valid_loss = 1.681, \
+  valid_mean_err = 0.871, \
+  valid_final_err = 1.709 \
+  Best epoch 7 \
+  Best valid_loss = 1.607 \
+  Best valid_mean_err = 0.933, \
+  Best valid_final_err = 1.885
+
+]
+
+#block()[
+  #set text(8pt)
+  #table(
+    columns: 6,
+    align: center,
+
+    [Epochs / LR], [Best Epoch], [Best Loss], [Best ADE], [Best FDE], [評価],
+
+    [30 / 0.003], [12], [1.273], [0.886], [1.699], [◎],
+
+    [15 / 0.003], [3], [2.516], [1.014], [2.057], [△],
+
+    [30 / 0.0015], [14], [1.460], [0.918], [1.849], [○],
+
+    [15 / 0.0015], [7], [1.607], [0.933], [1.885], [○],
+  )
+]
+
+=== 考察
+1. epochsを15に減らすと性能が悪化した \
+epoch12付近から過学習しているように見えたと考えたが結果を見ると、 \
+lr=0.003の場合 \
+epochs=30 → ADE 0.886  epochs=15 → ADE 1.014 \
+lr=0.0015の場合 \
+epochs=30 → ADE 0.918 epochs=15 → ADE 0.933 \
+15epochでは十分に学習できていなかった可能性が高いと考えられる
+
+#pagebreak()
+
+2. learning_rate=0.003 の方が良い
+学習率を下げることで安定化ができるかと考えたが今回は学習が遅くなりすぎて十分な最適化ができなかったと思われる
+
+#block()[
+  #set text(7pt)
+  #table(
+    columns: 3,
+    align: center,
+
+    [Ir], [Best ADE], [Best FDE],
+    [0.003], [0.886], [1.699],
+    [0.0015], [0.918], [1.849],
+  )
+]
+3. 「Best epoch」がかなり早い
+
+どの実験も、
+全学習終了時 ≠ 最高性能時になっている \
+つまり、学習後半では性能改善がほとんど起きていないと思われる \
+#block()[
+  #set text(6.3pt)
+  #table(
+    columns: 2,
+    align: center,
+
+    [設定], [Best epoch],
+    [30], [0.003	12],
+    [15], [0.003	3],
+    [30], [0.0015	14],
+    [15], [0.0015	7],
+  )]
+
 
 == 今後の予定
+- もう少し数値を変更して実験してみる
 - 現在のデータセットではなく、外部にあるデータセットを用いて実装する
 - Yolo と接続して動画から人物の座標を取得し、取得した座標をもとにSocial-LSTMの実行を行う
