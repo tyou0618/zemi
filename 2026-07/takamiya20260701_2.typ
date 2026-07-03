@@ -111,8 +111,14 @@ ETH（歩道）、Hotel（ホテル前）の2種類を使用。歩行者数は5�
 - Stanford Drone Dataset (SDD)
 多種類を使用。ドローン視点で撮影されており、先ほどの二つよりも人数が多く、人以外にも自転車も登場している。
 
+=== 追加予定のデータセット
+- inD Dataset:車・自転車・歩行者の軌跡を真上から撮影し記録したデータ
+- Grand Central Dataset:非常に混雑した環境
 
 == 今後の予定
-- もう少し数値を変更して実験してみる
-- 現在のデータセットではなく、外部にあるデータセットを用いて実装する
-- Yolo と接続して動画から人物の座標を取得し、取得した座標をもとにSocial-LSTMの実行を行う
+- データセットの変更
+- Yolo 接続から座標取得
+  - Pedestrian trajectory prediction method based on the Social-LSTM model for vehicle collision \
+  https://academic.oup.com/tse/article/6/3/tdad044/7480246?utm_source=chatgpt.com&login=true
+  - https://cvgl.stanford.edu/papers/CVPR16_Social_LSTM.pdf \
+  https://cvgl.stanford.edu/papers/CVPR16_Social_LSTM.pdf
