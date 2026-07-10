@@ -38,13 +38,23 @@
 == 再理解
 === 論文の読み直し
 Social-LSTMとYoLoの連携、およびデータセットの追加を行おうと考えていたが、思っていることができずAIに聞いてもわからなかったため一度論文の読み直しを行なっている\
-前までは必要な箇所のみを翻訳していただけだったので抜けのないように改めて全文を目を通すようにしている
+前までは必要な箇所のみを翻訳していただけだったので抜けのないように改めて全文を目を通すようにしている\
+論文と平行してプログラムの変更を行っている
 
 == 今後の予定
 - データセットの変更
 - Yolo 接続から座標取得
-  - Pedestrian trajectory prediction method based on the Social-LSTM model for vehicle collision \
-  https://academic.oup.com/tse/article/6/3/tdad044/7480246?utm_source=chatgpt.com&login=true
-  - https://cvgl.stanford.edu/papers/CVPR16_Social_LSTM.pdf \
-  https://cvgl.stanford.edu/papers/CVPR16_Social_LSTM.pdf
-https://gitlab.tu-clausthal.de/pka20/Trajectory-Prediction-Pedestrian/-/tree/31e2b8cd75ab0e68e9b6cf2470bb885eb82640d2/datasets/ATC
+
+#align()[ #text(10pt, "[システム最終形]") ]
+カメラ\
+↓\
+OpenCV(動画を1フレームずつ取得)\
+↓\
+YOLOv5(人物検出)\
+↓\
+ByteTrack(人物追跡)\
+↓\
+Social-LSTM(未来12フレーム予測)\
+追加:心理バイアス\
+↓\
+予測可視化
