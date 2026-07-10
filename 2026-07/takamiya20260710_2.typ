@@ -47,3 +47,4 @@ Social-LSTMとYoLoの連携、およびデータセットの追加を行おう�
   https://academic.oup.com/tse/article/6/3/tdad044/7480246?utm_source=chatgpt.com&login=true
   - https://cvgl.stanford.edu/papers/CVPR16_Social_LSTM.pdf \
   https://cvgl.stanford.edu/papers/CVPR16_Social_LSTM.pdf
+https://gitlab.tu-clausthal.de/pka20/Trajectory-Prediction-Pedestrian/-/tree/31e2b8cd75ab0e68e9b6cf2470bb885eb82640d2/datasets/ATC
