@@ -33,7 +33,7 @@ micro:bit & Super:bit を用いてオリジナルの自律走行ロボットを�
 - ブロックが一部でもゴールゾーンに入った時点で得点獲得とする
 
 #align(center)[
-  #image("field.png", width: 70%)
+  #image("takamiya20260730p1.png", width: 70%)
 ]
 
 == 競技手順

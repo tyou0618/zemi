@@ -42,7 +42,7 @@
   gutter: 1pt,
   align: top,
 
-  image("work shop.png", width: 100%),
+  image("takamiya20260724p1.png", width: 100%),
 
   [
     8月6日、7日(木、金)のワークショップに\
