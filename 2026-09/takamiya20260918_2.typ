@@ -25,31 +25,46 @@
 #align()[ #text(10pt, "6.心理バイアスの追加") ]
 
 == YoloとByteTrackの連携
-- YoloとByteTrackの統合
-  - Yoloの反応が悪かったのかうまく人を検知できなかった
+- YOLOの検出結果をByteTrackへ渡し、人物ごとにIDを付けて追跡する構成を試した
+- しかし、検出漏れや誤検出が追跡に影響し、IDの維持が安定しなかった
+- まずYOLO単体の検出結果を確認し、問題を切り分けた
+- 評価用動画を4本用意し、CVATで人物の正解データを作成した
+- 信頼度の調整をした
 
-- Yoloは11nから11sに変更
-  - ByteTrackがうまく動作せず、ID保持ができなかった
+#align(center)[
+  #grid(
+    columns: (1fr, 1fr),
+    gutter: 8pt,
+    image("takamiya20260918p1.png", width: 100%), image("takamiya20260918p2.png", width: 100%),
+  )
+]
 
-- 評価用動画を4本用意し,YOLO単体の検出精度確認を行った
-  - CVATで正解データを作成
-  - 信頼度の調整、ポリゴン除外領域を評価に適用
 
+== YoloとByteTrackの連携：検出と追跡の確認
+- YOLOを11nから11sに変更し、人物検出の改善を試した
+
+
+#align(center)[
+  #image("takamiya20260918p3.png", height: 78%, fit: "contain")
+]
+#align(center)[#text(8pt, "色付きの枠とID: ByteTrack / 赤点: 足元の座標")]
+
+== YoloとByteTrackの連携：動画ごとの違い
+- 撮影方向や人物の大きさが異なる動画で、検出・追跡結果を比較した
+- 人物が小さい映像や、人が重なる場面では、検出とID保持の調整に苦戦した
+
+#align(center)[
+  #grid(
+    columns: (1fr, 1fr),
+    gutter: 8pt,
+    image("takamiya20260918p4.png", height: 75%, fit: "contain"),
+    image("takamiya20260918p5.png", height: 75%, fit: "contain"),
+  )
+]
+#align(center)[#text(8pt, "異なる動画でのYOLOとByteTrackの出力例")]
 
 == 今後の予定
-- データセットの変更
-- Yolo 接続から座標取得
-
-#align()[ #text(10pt, "[システム最終形]") ]
-カメラ\
-↓\
-OpenCV(動画を1フレームずつ取得)\
-↓\
-YOLOv5(人物検出)\
-↓\
-ByteTrack(人物追跡)\
-↓\
-Social-LSTM(未来12フレーム予測)\
-追加:心理バイアス\
-↓\
-予測可視化
+- 使用するデータセットを決め、YOLOの人物検出とByteTrackのID追跡を安定させる
+- 検出枠の下端から足元の座標を取得し、人物ごとの軌跡を確認する
+- ホモグラフィー変換で足元の座標を実空間の座標に変換する
+- Social-LSTMによる未来位置の予測と、心理バイアスの追加に進む
